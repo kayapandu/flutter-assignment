@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:jago_assignment/widgets/CurveBackground.dart';
+import 'package:jago_assignment/widgets/PageNumber.dart';
 
 class Welcome extends StatefulWidget {
   @override
@@ -125,7 +126,7 @@ class _WelcomeState extends State<Welcome> {
       mainAxisSize: MainAxisSize.max,
       children: <Widget>[
         ButtonTheme(
-          minWidth: 600,
+          minWidth: double.infinity,
           child: RaisedButton(
             child: Text(
               'Next',
@@ -156,10 +157,11 @@ class _WelcomeState extends State<Welcome> {
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: <Widget>[
+                    PageNumber(),
                     _buildFormHeading(),
                     _buildTextContainer(),
                     _buildEmailInput(),
-                    _buildNextButton()
+                    Expanded(flex: 1, child: _buildNextButton())
                   ],
                 ),
               )
