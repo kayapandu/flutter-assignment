@@ -33,7 +33,7 @@ class _WelcomeState extends State<Welcome> {
 
   Widget _buildFormHeading() {
     return Container(
-      padding: EdgeInsets.only(top: 100),
+      padding: EdgeInsets.only(top: 70),
       alignment: Alignment.centerLeft,
       child: RichText(
         text: TextSpan(
@@ -61,7 +61,7 @@ class _WelcomeState extends State<Welcome> {
 
   Widget _buildTextContainer() {
     return Container(
-      padding: EdgeInsets.only(top: 20, right: 30),
+      padding: EdgeInsets.only(top: 20),
       alignment: Alignment.centerLeft,
       child: RichText(
         text: TextSpan(

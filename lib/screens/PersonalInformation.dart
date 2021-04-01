@@ -177,9 +177,10 @@ class _PersonalInformationState extends State<PersonalInformation> {
         title: Text('Create Account',
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 30.0,
+              fontSize: 18.0,
               fontFamily: 'Lato',
             )),
+        backgroundColor: Colors.blueAccent,
       ),
       backgroundColor: Colors.blueAccent,
       body: SafeArea(

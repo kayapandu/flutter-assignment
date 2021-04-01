@@ -198,6 +198,7 @@ class _CreatePasswordState extends State<CreatePassword> {
               fontSize: 30.0,
               fontFamily: 'Lato',
             )),
+        backgroundColor: Colors.blueAccent,
       ),
       backgroundColor: Colors.blueAccent,
       body: SafeArea(
