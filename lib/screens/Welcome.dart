@@ -61,7 +61,7 @@ class _WelcomeState extends State<Welcome> {
 
   Widget _buildTextContainer() {
     return Container(
-      padding: EdgeInsets.only(top: 20),
+      padding: EdgeInsets.only(top: 20, right: 30),
       alignment: Alignment.centerLeft,
       child: RichText(
         text: TextSpan(
@@ -69,11 +69,11 @@ class _WelcomeState extends State<Welcome> {
           children: <TextSpan>[
             TextSpan(
               text: 'Welcome to the Bank Of The Future.\n',
-              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 18),
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 19),
             ),
             TextSpan(
               text: 'Manage and track your accounts on the go.',
-              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 18),
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 19),
             ),
           ],
         ),
@@ -156,12 +156,13 @@ class _WelcomeState extends State<Welcome> {
                 padding: EdgeInsets.all(15),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     PageNumber(),
                     _buildFormHeading(),
                     _buildTextContainer(),
                     _buildEmailInput(),
-                    Expanded(flex: 1, child: _buildNextButton())
+                    _buildNextButton()
                   ],
                 ),
               )

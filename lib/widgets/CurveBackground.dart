@@ -10,9 +10,9 @@ class CurveBackground extends CustomPainter {
 
     var path = Path();
 
-    path.moveTo(0, size.height * 0.800);
+    path.moveTo(0, size.height * 0.550);
     path.quadraticBezierTo(
-        size.width / 5, size.height / 4, size.width, size.height / 0.850);
+        size.width / 10, size.height / 10, size.width, size.height / 0.980);
     path.lineTo(size.width, 0);
     path.lineTo(0, 0);
 
