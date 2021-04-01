@@ -12,6 +12,17 @@ class _CreatePasswordState extends State<CreatePassword> {
   final _formKey = GlobalKey<FormState>();
 
   String password = '';
+  bool isLowercase, isUppercase, isNumber, isRichCharacter, showPassword;
+
+  @override
+  void initState() {
+    super.initState();
+    showPassword = false;
+    isLowercase = false;
+    isUppercase = false;
+    isNumber = false;
+    isRichCharacter = false;
+  }
 
   Widget _buildFormHeading() {
     return Container(
@@ -46,11 +57,15 @@ class _CreatePasswordState extends State<CreatePassword> {
               children: <Widget>[
                 TextFormField(
                   autofocus: true,
+                  obscureText: !this.showPassword,
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
                     suffixIcon: IconButton(
                       icon: Icon(Icons.remove_red_eye, color: Colors.blue[600]),
+                      onPressed: () {
+                        setState(() => showPassword = !showPassword);
+                      },
                     ),
                     hintText: 'Create Password',
                     border: OutlineInputBorder(
@@ -85,7 +100,7 @@ class _CreatePasswordState extends State<CreatePassword> {
             ),
             Padding(padding: EdgeInsets.only(left: 10)),
             Text(
-              'Test',
+              'Very Weak',
               style: TextStyle(
                   color: Colors.red, fontWeight: FontWeight.bold, fontSize: 16),
             ),
@@ -104,7 +119,7 @@ class _CreatePasswordState extends State<CreatePassword> {
                 Text('a',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        color: Colors.white,
+                        color: isLowercase ? Colors.green : Colors.white,
                         fontSize: 22,
                         fontWeight: FontWeight.bold)),
                 Text('Lowercase',
@@ -120,7 +135,7 @@ class _CreatePasswordState extends State<CreatePassword> {
                 Text('A',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        color: Colors.white,
+                        color: isUppercase ? Colors.green : Colors.white,
                         fontSize: 22,
                         fontWeight: FontWeight.bold)),
                 Text('Uppercase',
@@ -136,7 +151,7 @@ class _CreatePasswordState extends State<CreatePassword> {
                 Text('123',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        color: Colors.white,
+                        color: isNumber ? Colors.green : Colors.white,
                         fontSize: 22,
                         fontWeight: FontWeight.bold)),
                 Text('Number',
@@ -152,7 +167,7 @@ class _CreatePasswordState extends State<CreatePassword> {
                 Text('9+',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        color: Colors.white,
+                        color: isRichCharacter ? Colors.green : Colors.white,
                         fontSize: 22,
                         fontWeight: FontWeight.bold)),
                 Text('Characters',
@@ -195,7 +210,7 @@ class _CreatePasswordState extends State<CreatePassword> {
         title: Text('Create Account',
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 30.0,
+              fontSize: 18.0,
               fontFamily: 'Lato',
             )),
         backgroundColor: Colors.blueAccent,
@@ -208,7 +223,7 @@ class _CreatePasswordState extends State<CreatePassword> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
-              PageNumber(),
+              PageNumber(2),
               _buildFormHeading(),
               _buildPasswordInput(),
               _buildComplexityText(),

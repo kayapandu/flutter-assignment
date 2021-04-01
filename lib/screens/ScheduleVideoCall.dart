@@ -17,6 +17,7 @@ class _ScheduleVideoCallState extends State<ScheduleVideoCall> {
 
   TextEditingController _dateController = TextEditingController();
   TextEditingController _timeController = TextEditingController();
+  AnimationController animationController;
 
   List<String> monthList = [
     'Jan',
@@ -87,6 +88,40 @@ class _ScheduleVideoCallState extends State<ScheduleVideoCall> {
     if (time.hour <= 9) getHour = "0${time.hour.toString()}";
     return "$getHour:$getMinute";
   }
+
+  //Due to flutter version i can't implement this animation controller
+
+  // Widget _buildCalendarIcon() {
+  //   return Container(
+  //     alignment: Alignment.centerLeft,
+  //     child: AnimatedBuilder(
+  //       animation: animationController,
+  //       builder: (context, child) {
+  //         return Container(
+  //           decoration: ShapeDecoration(
+  //             color: Colors.white.withOpacity(0.5),
+  //             shape: CircleBorder(),
+  //           ),
+  //           child: Padding(
+  //             padding: EdgeInsets.all(8.0 * animationController.value),
+  //             child: child,
+  //           ),
+  //         );
+  //       },
+  //       child: Container(
+  //         decoration: ShapeDecoration(
+  //           color: Colors.white,
+  //           shape: CircleBorder(),
+  //         ),
+  //         child: IconButton(
+  //           onPressed: () {},
+  //           color: Colors.blue,
+  //           icon: Icon(Icons.calendar_today, size: 26),
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
 
   Widget _buildFormHeading() {
     return Container(
@@ -254,7 +289,7 @@ class _ScheduleVideoCallState extends State<ScheduleVideoCall> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             mainAxisSize: MainAxisSize.max,
             children: <Widget>[
-              PageNumber(),
+              PageNumber(4),
               _buildFormHeading(),
               _buildDate(context),
               _buildTime(context),

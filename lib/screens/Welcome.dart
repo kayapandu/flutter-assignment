@@ -158,7 +158,7 @@ class _WelcomeState extends State<Welcome> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
-                    PageNumber(),
+                    PageNumber(1),
                     _buildFormHeading(),
                     _buildTextContainer(),
                     _buildEmailInput(),

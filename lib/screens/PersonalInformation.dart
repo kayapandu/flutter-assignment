@@ -190,7 +190,7 @@ class _PersonalInformationState extends State<PersonalInformation> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              PageNumber(),
+              PageNumber(3),
               _buildFormHeading(),
               _buildGoalActivationDropdown(),
               _buildMonthlyIncomeDropdown(),

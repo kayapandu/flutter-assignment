@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class PageNumber extends StatefulWidget {
+  const PageNumber(this.currentIndex);
+
+  final int currentIndex;
+
   @override
   _PageNumberState createState() {
     return _PageNumberState();
@@ -17,7 +21,7 @@ class _PageNumberState extends State<PageNumber> {
         curve: Curves.fastOutSlowIn,
         duration: kThemeAnimationDuration,
         decoration: BoxDecoration(
-            color: Colors.white,
+            color: index < widget.currentIndex ? Colors.green : Colors.white,
             shape: BoxShape.circle,
             border: Border.all(color: Colors.black)),
         child: Center(
